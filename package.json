@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "publisher": "drewsk",
     "engines": {
-        "vscode": "^1.39.0",
+        "vscode": "^1.36.0",
         "azdata": "*"
     },
     "repository": {
@@ -57,7 +57,7 @@
     "devDependencies": {
         "typescript": "^2.6.1",
         "vscode": "^1.1.6",
-        "azdata": "1.0.0",
+        "azdata": "^1.0.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
     }
