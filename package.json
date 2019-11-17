@@ -2,7 +2,7 @@
     "name": "demo-mode",
     "displayName": "Demo Mode",
     "description": "Updates the Azure Data Studio editor UI to large font for editing",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "drewsk",
     "engines": {
         "vscode": "^1.36.0",
@@ -36,11 +36,18 @@
                 "properties": {
                     "demomode.originalFontSize": {
                         "type": "number",
-                        "default": 12
+                        "default": 12,
+                        "description": "Original editor size (will override from your editor font size)"
                     },
                     "demomode.demoFontSize": {
                         "type": "number",
-                        "default": 18
+                        "default": 18,
+                        "description": "Font size when in demo mode (default: 18)"
+                    },
+                    "demomode.telemetry": {
+                        "type": "boolean",
+                        "default": "true",
+                        "description": "Enable usage data to be sent to an online service"
                     }
                 }
             }
@@ -60,5 +67,9 @@
         "azdata": "^1.0.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "os": "^0.1.1",
+        "vscode-extension-telemetry": "^0.1.2"
     }
 }
