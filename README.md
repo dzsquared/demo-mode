@@ -16,7 +16,7 @@ This extension contributes the following settings:
 * `demomode.telemetry`: enables anonymous usage data to be sent to an online service
 
 ## Your Privacy
-The extension telemetry sends usage data anonymously to an Application Insights instance. Machine information, such as operating system or general location, may be shared with the general public in aggregate. Your information will not be sold to any third parties.  For more on the collection of telemtry in this extension, read more [here](https://www.drewsk.tech/decision:-adding-telemetry-to-azure-data-studio-extensions) or ask questions [here](https://github.com/dzsquared/demo-mode). 
+The extension telemetry sends usage data anonymously to an Application Insights instance. Machine information, such as operating system or general location, may be shared with the general public in aggregate. Your information will not be sold to any third parties.  For more on the collection of telemtry in this extension, read more [here](https://www.drewsk.tech/decision-adding-telemetry-to-azure-data-studio-extensions) or ask questions [here](https://github.com/dzsquared/demo-mode). 
 
 ## Release Notes
 
