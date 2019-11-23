@@ -1,29 +1,15 @@
 'use strict';
 import * as vscode from 'vscode';
 import { StatusBarToggle } from './statusBarToggle';
+import { telemetryHelper } from './telemetryHelper';
 
-import * as telemetryConnect from  './telemetryConnect';
-let telemetryconnect: telemetryConnect.telemetryConnect = require('../telemetryConnect.json');
-
-// extension telemetry
-import TelemetryReporter from 'vscode-extension-telemetry';
-const extensionId = 'demo-mode';
-const extensionVersion = '1.1.0'; 
-const key = telemetryconnect.token;  
-let reporter;
-var theSettings = vscode.workspace.getConfiguration();
-const telemetryOn:boolean = ( theSettings.get('demomode.telemetry') && theSettings.get('telemetry.enableTelemetry') );
-
-// toggle in the lower status bar
 let statusBarToggle;
+var tH;
 
 export function activate(context: vscode.ExtensionContext) {
 
-    reporter = new TelemetryReporter(extensionId, extensionVersion, key);
-    context.subscriptions.push(reporter);
-    if ( telemetryOn ) {
-        reporter.sendTelemetryEvent('activated', {}, { });
-    }
+    tH = new telemetryHelper(context);
+    tH.sendTelemetry('activated', { }, { });
 
     statusBarToggle = new StatusBarToggle();
     context.subscriptions.push(statusBarToggle);
@@ -36,9 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
         theSettings.update('editor.fontSize', newFontSize, vscode.ConfigurationTarget.Global);
         theSettings.update('demomode.originalFontSize', oldFontSize, vscode.ConfigurationTarget.Global);
         
-        if ( telemetryOn ) {
-            reporter.sendTelemetryEvent('enabled', { }, { });
-        }
+        tH.sendTelemetry('enabled', { }, { });
 
         statusBarToggle.toggle(true);
 
@@ -52,9 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
         var theSettings = vscode.workspace.getConfiguration();
         theSettings.update('editor.fontSize', newFontSize, vscode.ConfigurationTarget.Global);
         
-        if ( telemetryOn ) {
-            reporter.sendTelemetryEvent('disabled', { }, { });
-        }
+        tH.sendTelemetry('disabled', { }, { });
 
         statusBarToggle.toggle(false);
     }));
@@ -63,6 +45,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 export function deactivate() {
-    reporter.dispose();
+    tH.reporter.dispose();
     statusBarToggle.dispose();
 }
