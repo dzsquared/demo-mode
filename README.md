@@ -20,6 +20,9 @@ The extension telemetry sends usage data anonymously to an Application Insights 
 
 ## Release Notes
 
+### 1.1.1.
+Fix for telemetry settings to apply without requiring application restart.
+
 ### 1.1.0
 Adds generic telemetry for extension utilization.
 
