@@ -5,7 +5,7 @@
 
 All this extension does is toggle the editor font size between your font and a larger font size.  This is intended to help presenters while demoing in Azure Data Studio without zooming the whole interface.
 
-![Demo Mode Demo](/images/enable_disable.gif)
+![Demo Mode Demo](https://github.com/dzsquared/demo-mode/raw/master/images/enable_disable2.gif)
 
 ## Extension Settings
 
