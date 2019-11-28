@@ -30,6 +30,18 @@
                 "title": "Disable Demo Mode"
             }
         ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "dsk.enableDemoMode",
+                    "when": "false"
+                },
+                {
+                    "command": "dsk.disableDemoMode",
+                    "when": "false"
+                }
+            ]
+        },
         "configuration": [
             {
                 "title": "Demo Mode",
