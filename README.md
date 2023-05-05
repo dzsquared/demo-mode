@@ -28,3 +28,7 @@ Adds generic telemetry for extension utilization.
 
 ### 1.0.0
 Completed in the PASS Community zone, thanks for the chair!
+
+## License
+
+This extension is released under the [MIT License](https://raw.githubusercontent.com/dzsquared/demo-mode/master/LICENSE).
